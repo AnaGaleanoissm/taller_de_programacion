@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<HTML>
+
+<HEAD>
+    <TITLE>Pompompurin Calculadora IMC
+    </TITLE>
+    <style>
+        aside {
+            font-size: x-large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: lightpink;
+        }
+
+        form input {
+            margin: 5px;
+            border: 5px dashed #99993f;
+
+        }
+
+        form {
+            margin: 0 33%;
+            padding: 15px;
+            background: rgb(255, 227, 151);
+            border: rgb(255, 218, 115) 15px solid;
+
+        }
+
+        body {
+            background-image: url('https://i.pinimg.com/originals/0c/09/9c/0c099cdb60af6b9c301fc86229619819.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        h2 {
+            background: rgb(255, 227, 151);
+            padding: 10px;
+            border-radius: 20px;
+            border: rgb(255, 218, 115) 15px solid;
+            color: rgb(255, 255, 255);
+        }
+
+        img#derecha {
+            position: absolute;
+            right: 0px;
+        }
+
+        img#izquierda {
+            position: absolute;
+            left: 0px;
+            bottom: 450px;
+        }
+    </style>
+    </p>
+</HEAD>
+
+<BODY>
+    <img id="izquierda"
+        src="https://64.media.tumblr.com/a86753dba21858536a4d4507fd96df87/9c6995b07d21774e-b4/s1280x1920/0b287f96d52095896c5475b471120c882080635e.gifv"
+        alt="Pompompurin2" width="150" height="150">
+
+    <img id="derecha"
+        src="https://64.media.tumblr.com/17387e5f0f384dab7c1c99ae9df3cdeb/0f14a7e86334893b-ba/s1280x1920/b0ea01218a2c4c070733b7dda17487ec639e9c50.gifv"
+        alt="Pompompurin" width="250" height="300">
+    <center>
+
+        <form action="" onsubmit="calcular_imc(event)">
+            <input type="number" placeholder="altura" name="altura" id="altura" onchange="calcular_imc(event)">
+            <input type="number" placeholder="peso" name="peso" id="peso" onchange="calcular_imc(event)">
+            <button type="submit"> calcular imc</button>
+        </form>
+        <hr>
+        <h2 id="resu"></h2>
+        <img id="imagen_imc" src="">
+        <aside>
+            <P>El índice de masa corporal es una razón matemática que asocia la masa y la talla de un individuo, ideada
+                por el estadístico belga Adolphe Quetelet, por lo que también se conoce como índice de Quetelet.</P>
+        </aside>
+    </center>
+    <SCRIPT type="text/javascript">
+        function calcular_imc(event) {
+            event.preventDefault();
+            var altura;
+            var peso;
+            altura = document.getElementById("altura").value/100;
+            peso = document.getElementById("peso").value;
+            imc = peso / (altura* altura);
+            document.getElementById("resu").innerText = imc;
+
+            pompompurin = document.getElementById("imagen_imc");
+            if (imc <= 25) {
+                pompompurin.SetAtribute("src", "https://media.tenor.com/DAy34zTfLHMAAAAj/miira-no-kaikata-how-to-keep-a-mummy.gif")
+            } else if (imc > 25 && imc < 30) {
+                pompompurin.SetAtribute("src", "https://media.tenor.com/vu5rfjaLqosAAAAi/pompompurin-pom-pom-purin.gif")
+            }
+
+        }
+
+    </SCRIPT>
+</BODY>
+
+</HTML>
